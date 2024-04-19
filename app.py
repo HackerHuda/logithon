@@ -32,7 +32,7 @@ def summarize_text(text, num_sentences=3):
     
     summary_text = "\n".join([str(sentence) for sentence in summary])
     return summary_text
-
+  
 
 def main():
     st.header("Chat with PDF 💬")
@@ -91,6 +91,13 @@ def main():
         st.header("Summary")
         st.write(summary_text)
         
+        st.header("Ask a question about the PDF")
+        question = st.text_input("Type your question:")
+        if question:
+            answer = answer_question(question, summary_text)
+            st.write("Answer:")
+            st.write(answer)
+            
 if __name__ == '__main__':
     main()
 
