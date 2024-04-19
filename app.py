@@ -36,6 +36,7 @@ def summarize_text(text, num_sentences=3):
 
 def main():
     st.header("Chat with PDF 💬")
+    
     with tab3:
         if 'conversation' not in st.session_state:
             st.session_state['conversation'] = []
